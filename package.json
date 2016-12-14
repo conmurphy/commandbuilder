@@ -1,0 +1,12 @@
+{
+  "name": "commandbuilder",
+  "version": "1.0.0",
+  "description": "Spark Bot Command Builder",
+  "main": "commandbuilder.js",
+  "author": "Conor Murphy",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}

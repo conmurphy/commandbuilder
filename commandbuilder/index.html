@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Extensible Spark Bot - Command Builder</title>
+        <link rel="stylesheet" href="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.css" >
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/jquery.trip.js/3.3.3/trip.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.contextMenu.js" type="text/javascript"></script>
+        <script src="https://swisnl.github.io/jQuery-contextMenu/dist/jquery.ui.position.min.js" type="text/javascript"></script>
+        <script src="https://swisnl.github.io/jQuery-contextMenu/js/main.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//oss.maxcdn.com/jquery.trip.js/3.3.3/trip.min.js"></script>
+    </head>
+    <body style=" background-color:#FCFAFC; ">
+        <nav class="navbar navbar-inverse">
+            <div  class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div  class="navbar-header">
+                    <a class="navbar-brand" href="" style="color:#fff">Extensible Spark Bot - Command Builder</a>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="container-fluid" >
+        <div class="row">
+            <div style=" background-color:#FCFAFC; " class="col-sm-10 col-sm-offset-1">
+                <div class="spacer"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-dark">
+                                <div class="panel-heading" style="font-size: 24px; " class="panel-title ">
+                                    Command Tree
+                                    <i id="treeInfo" class="fa fa-info-circle fa-1x" aria-hidden="true" style="float: right;vertical-align:middle;"></i>
+                                </div>
+                                <div class="panel-body " >
+                                    <div id="buildTree">
+                                        <div class="treeConnectors">
+                                            <ul>
+                                                <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
+                                                <li hidden="" elementtype="leaf" class="parent_li" id="detail">sd</li>
+                                                <li elementtype="branch" class="parent_li" id="this">
+                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">this</span>
+                                                    <ul>
+                                                        <li elementtype="branch" class="parent_li" id="is">
+                                                            <span style="font-size:22px; color:#26384D">is</span>
+                                                            <ul>
+                                                                <li elementtype="branch" class="parent_li" id="a">
+                                                                    <span style="font-size:22px; color:#26384D">a</span>
+                                                                    <ul>
+                                                                        <li elementtype="branch" class="parent_li" id="sample">
+                                                                            <span style="font-size:22px; color:#26384D">sample</span>
+                                                                            <ul>
+                                                                                <li elementtype="branch" class="parent_li" id="command">
+                                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">command</span>
+                                                                                    <ul>
+                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
+                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="detail">This text will be sent to the chat room when this command has been typed</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li elementtype="branch" class="parent_li" id="another">
+                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">another</span>
+                                                                    <ul>
+                                                                        <li elementtype="branch" class="parent_li" id="sample">
+                                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">sample</span>
+                                                                            <ul>
+                                                                                <li elementtype="branch" class="parent_li" id="command">
+                                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">command</span>
+                                                                                    <ul>
+                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
+                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="detail">this is some more sample text</li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li elementtype="branch" class="parent_li" id="check">
+                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">check</span>
+                                                    <ul>
+                                                        <li elementtype="branch" class="parent_li" id="weather">
+                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">weather</span>
+                                                            <ul>
+                                                                <li elementtype="branch" class="parent_li" id="$$">
+                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">$$</span>
+                                                                    <ul>
+                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">function</li>
+                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="function">checkWeather</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li hidden="" elementtype="leaf" id="argumentName">location</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li elementtype="branch" class="parent_li" id="hello">
+                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">hello</span>
+                                                    <ul>
+                                                        <li elementtype="branch" class="parent_li" id="world">
+                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">world</span>
+                                                            <ul>
+                                                                <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
+                                                                <li hidden="" elementtype="leaf" class="parent_li" id="detail">hi there</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/panel-info-->
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="panel panel-dark"  " >
+                                <div class="panel-heading" style="font-size: 24px;;  " class="panel-title ">
+                                    Configuration
+                                    <i id="newImportExportInfo" class="fa fa-info-circle fa-1x" aria-hidden="true" style="float: right;vertical-align:middle;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-sm-12 " >
+                                        <div align="center" id="newImportExportButtonGroup">
+                                            <button style="padding: 10px;width: 30%;font-size: 20px;" id="newTree" type="button" class="btn btn-darkGreen" >New Tree</button>
+                                            <label style="padding: 10px;width: 30%;font-size: 20px;" class="btn btn-darkGreen" >
+                                            Import Tree <input type="file" id="jsonFile" name="jsonFile" style="display: none;">
+                                            </label>
+                                            <a id="exportTreeButton" href=""> <label style="padding: 10px;width: 30%;font-size: 20px;" class="btn btn-darkGreen" >
+                                            Export Tree
+                                            </label></a>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div align="center" >
+                                            <button style="padding: 10px;width: 30%;font-size: 20px;" id="addFullCommandButton" type="button" class="btn btn-darkGreen" >Add Full Command</button>
+                                        </div>
+                                        <div class="spacer"></div>
+                                        <div id="botNameInput">
+                                            <label for="botName" style="font-size: 20px" >How will you call the bot? e.g. /myBot or #bot</label>
+                                            <input type="text" class="form-control" id="botName" />
+                                        </div>
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="col-sm-12" style=" background-color:#FCFAFC;font-size: 20px;border: 1px solid #26384D;">
+                                        <div class="configurationForms" hidden>
+                                            <div class="spacer"></div>
+                                            <div class="branchForm" hidden>
+                                                <form id="branchForm" role="form">
+                                                    <div class="form-group">
+                                                        <div>
+                                                            <p><b>COMMAND TYPE</b></p>
+                                                        </div>
+                                                        <select id="branchFormSelect" style="border-radius: 0px;">
+                                                            <option value="fixed">Fixed</option>
+                                                            <option value="configurable">User Input</option>
+                                                        </select>
+                                                        <div class="branchFormFixed">
+                                                            <div class="spacer"></div>
+                                                            <label for="branchFormCommandFixed">COMMAND</label>
+                                                            <input type="text" class="form-control" id="branchFormCommandFixed" />
+                                                            <div class="spacer"></div>
+                                                        </div>
+                                                        <div class="branchFormConfigurable" hidden>
+                                                            <div class="spacer"></div>
+                                                            <label for="branchFormCommandConfigurable">COMMAND</label>
+                                                            <input type="text" value="$$" class="form-control" id="branchFormCommandConfigurable" disabled/>
+                                                            <div class="spacer"></div>
+                                                            <label for="branchFormArgument">ARGUMENT NAME</label>
+                                                            <input type="text" class="form-control" id="branchFormArgument" />
+                                                            <div class="spacer"></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="leafForm" hidden>
+                                                <form id="leafForm" role="form">
+                                                    <div class="form-group">
+                                                        <div>
+                                                            <p><b>LEAF ATTRIBUTES</b></p>
+                                                        </div>
+                                                        <select id="leafFormSelect" style="border-radius: 0px;">
+                                                            <option value="readonly">Read Only</option>
+                                                            <option value="function">Function</option>
+                                                        </select>
+                                                        <div class="leafFormReadOnly" >
+                                                            <div class="spacer"></div>
+                                                            <label for="leafFormCommandDetail">COMMAND DETAIL</label>
+                                                            <textarea id="leafFormCommandDetail" rows="4" cols="50"></textarea>
+                                                            <div class="spacer"></div>
+                                                        </div>
+                                                        <div class="leafFormFunction" hidden>
+    
+                                                            <div class="spacer"></div>
+                                                            <label for="leafFormFunctionName">FUNCTION NAME</label>
+                                                            <input type="text" class="form-control" id="leafFormFunctionName" />
+                                                            <div class="spacer"></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div style="float: right;">
+                                                <button id="configurationFormsReset" type="button" class="btn btn-darkRed" >Reset</button>
+                                                <button id="configurationFormsApply" type="button" class="btn btn-darkGreen" >Apply</button>
+                                                <div class="spacer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/panel-info-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+    <!-- Add Next Command Modal -->
+    <div class="modal fade" id="addNextCommandModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Add Command - Next Level
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-sm-12" style=" background-color:#FCFAFC;font-size: 20px;border: 1px solid #26384D;">
+                        <div class="addNextCommandConfigurationForms" hidden>
+                            <div class="spacer"></div>
+                            <select id="addNextCommandLeafBranchSelect" style="border-radius: 0px;">
+                                <option value="leaf">Leaf</option>
+                                <option value="branch">Branch</option>
+                            </select>
+                            <div class="addNextCommandBranchForm" hidden>
+                                <form id="addNextCommandBranchForm" role="form">
+                                    <div class="form-group">
+                                        <div class="spacer"></div>
+                                        <div>
+                                            <p><b>COMMAND TYPE</b></p>
+                                        </div>
+                                        
+                                        <select id="addNextCommandBranchFormSelect" style="border-radius: 0px;">
+                                            <option value="fixed">Fixed</option>
+                                            <option value="configurable">User Input</option>
+                                        </select>
+                                        <div class="addNextCommandBranchFormFixed">
+                                            <div class="spacer"></div>
+                                            <label for="addNextCommandBranchFormCommandFixed">COMMAND</label>
+                                            <input type="text" class="form-control" id="addNextCommandBranchFormCommandFixed" />
+                                        </div>
+                                        <div class="addNextCommandBranchFormConfigurable" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="addNextCommandBranchFormCommandConfigurable">COMMAND</label>
+                                            <input type="text" value="$$" class="form-control" id="addNextCommandBranchFormCommandConfigurable" disabled/>
+                                            <div class="spacer"></div>
+                                            <label for="addNextCommandBranchFormArgument">ARGUMENT NAME</label>
+                                            <input type="text" class="form-control" id="addNextCommandBranchFormArgument" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="addNextCommandLeafForm" hidden>
+                                <form id="addNextCommandLeafForm" role="form">
+                                    <div class="form-group">
+                                        <div>
+                                            <p><b>LEAF ATTRIBUTES</b></p>
+                                        </div>
+                                        <select id="addNextCommandLeafFormSelect" style="border-radius: 0px;">
+                                            <option value="readonly">Read Only</option>
+                                            <option value="function">Function</option>
+                                        </select>
+                                        <div class="addNextCommandLeafFormReadOnly" >
+                                            <div class="spacer"></div>
+                                            <label for="addNextCommandLeafFormCommandDetail">COMMAND DETAIL</label>
+                                            <textarea id="addNextCommandLeafFormCommandDetail" rows="4" cols="50"></textarea>
+                                        </div>
+                                        <div class="addNextCommandLeafFormFunction" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="addNextCommandLeafFormFunctionName">FUNCTION NAME</label>
+                                            <input type="text" class="form-control" id="addNextCommandLeafFormFunctionName" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                            <button id="addNextCommandConfigurationFormsApply" type="button" class="btn btn-darkGreen" >Apply</button>
+                        <div class="spacer"></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Current Command Modal -->
+    <div class="modal fade" id="addCurrentCommandModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Add Command - Current Level
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-sm-12" style=" background-color:#FCFAFC;font-size: 20px;border: 1px solid #26384D;">
+                        <div class="addCurrentCommandConfigurationForms" hidden>
+                            <div class="spacer"></div>
+                            <select id="addCurrentCommandLeafBranchSelect" style="border-radius: 0px;">
+                                <option value="leaf">Leaf</option>
+                                <option value="branch">Branch</option>
+                            </select>
+                            <div class="addCurrentCommandBranchForm" hidden>
+                                <form id="addCurrentCommandBranchForm" role="form">
+                                    <div class="form-group">
+                                        <div class="spacer"></div>
+                                        <div>
+                                            <p><b>COMMAND TYPE</b></p>
+                                        </div>
+                                        <select id="addCurrentCommandBranchFormSelect" style="border-radius: 0px;">
+                                            <option value="fixed">Fixed</option>
+                                            <option value="configurable">User Input</option>
+                                        </select>
+                                        <div class="addCurrentCommandBranchFormFixed">
+                                            <div class="spacer"></div>
+                                            <label for="addCurrentCommandBranchFormCommandFixed">COMMAND</label>
+                                            <input type="text" class="form-control" id="addCurrentCommandBranchFormCommandFixed" />
+                                        </div>
+                                        <div class="addCurrentCommandBranchFormConfigurable" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="addCurrentCommandBranchFormCommandConfigurable">COMMAND</label>
+                                            <input type="text" value="$$" class="form-control" id="addCurrentCommandBranchFormCommandConfigurable" disabled/>
+                                            <div class="spacer"></div>
+                                            <label for="addCurrentCommandBranchFormArgument">ARGUMENT NAME</label>
+                                            <input type="text" class="form-control" id="addCurrentCommandBranchFormArgument" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="addCurrentCommandLeafForm" hidden>
+                                <form id="addCurrentCommandLeafForm" role="form">
+                                    <div class="form-group">
+                                        <div>
+                                            <p><b>LEAF ATTRIBUTES</b></p>
+                                        </div>
+                                        <select id="addCurrentCommandLeafFormSelect" style="border-radius: 0px;">
+                                            <option value="readonly">Read Only</option>
+                                            <option value="function">Function</option>
+                                        </select>
+                                        <div class="addCurrentCommandLeafFormReadOnly" >
+                                            <div class="spacer"></div>
+                                            <label for="addCurrentCommandLeafFormCommandDetail">COMMAND DETAIL</label>
+                                            <textarea id="addCurrentCommandLeafFormCommandDetail" rows="4" cols="50"></textarea>
+                                            <div class="spacer"></div>
+                                        </div>
+                                        <div class="addCurrentCommandLeafFormFunction" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="addCurrentCommandLeafFormFunctionName">FUNCTION NAME</label>
+                                            <input type="text" class="form-control" id="addCurrentCommandLeafFormFunctionName" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                            <button id="addCurrentCommandConfigurationFormsApply" type="button" class="btn btn-darkGreen" >Apply</button>
+                        <div class="spacer"></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Current Selected Command Modal -->
+    <div class="modal fade" id="deleteCurrentSelectedModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Delete Currently Selected Command
+                    </h4>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <div style="float: right;">
+                        <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                        <button id="deleteCurrentSelectedConfigurationFormsApply" type="button" class="btn btn-darkGreen" >Confirm</button>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Entire Branch Command Modal -->
+    <div class="modal fade" id="deleteEntireModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Delete Entire Branch
+                    </h4>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <div style="float: right;">
+                        <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                        <button id="deleteEntireConfigurationFormsApply" type="button" class="btn btn-darkGreen" >Confirm</button>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Current Command Modal -->
+    <div class="modal fade" id="saveCurrentTreeModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Save before building new tree?
+                    </h4>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <div style="float: right;">
+                        <button id="cancelButton" type="button" class="btn btn-darkGreen">Cancel</button>
+                        <button id="noSaveButton" type="button" class="btn btn-darkRed">No</button>
+                        <a id="saveButton" href=""> <label class="btn btn-darkGreen">Yes</label></a>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Current Command Modal -->
+    <div class="modal fade" id="saveCurrentTreeModalImport" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Save before building new tree?
+                    </h4>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <div style="float: right;">
+                        <button id="cancelButtonImport" type="button" class="btn btn-darkGreen">Cancel</button>
+                        <button id="noSaveButtonImport" type="button" class="btn btn-darkRed">No</button>
+                        <a id="saveButtonImport" href=""> <label class="btn btn-darkGreen">Yes</label></a>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Tree Modal -->
+    <div class="modal fade" id="newTreeModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        New Command Tree
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-sm-12" style=" background-color:#FCFAFC;font-size: 20px;border: 1px solid #26384D;">
+                        <div class="newTreeConfigurationForms" hidden>
+                            <div class="spacer"></div>
+                            <select id="newTreeLeafBranchSelect" style="border-radius: 0px;">
+                                <option value="leaf">Leaf</option>
+                                <option value="branch">Branch</option>
+                            </select>
+                            <div class="newTreeBranchForm" hidden>
+                                <form id="newTreeBranchForm" role="form">
+                                    <div class="form-group">
+                                        <div>
+                                            <div class="spacer"></div>
+                                            <p><b>COMMAND TYPE</b></p>
+                                        </div>
+                                        <select id="newTreeBranchFormSelect" style="border-radius: 0px;">
+                                            <option value="fixed">Fixed</option>
+                                            <option value="configurable">User Input</option>
+                                        </select>
+                                        <div class="newTreeBranchFormFixed">
+                                            <div class="spacer"></div>
+                                            <label for="newTreeBranchFormCommandFixed">COMMAND</label>
+                                            <input type="text" class="form-control" id="newTreeBranchFormCommandFixed" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                        <div class="newTreeBranchFormConfigurable" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="newTreeBranchFormCommandConfigurable">COMMAND</label>
+                                            <input type="text" value="$$" class="form-control" id="newTreeBranchFormCommandConfigurable" disabled/>
+                                            <div class="spacer"></div>
+                                            <label for="newTreeBranchFormArgument">ARGUMENT NAME</label>
+                                            <input type="text" class="form-control" id="newTreeBranchFormArgument" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="newTreeLeafForm" hidden>
+                                <form id="newTreeLeafForm" role="form">
+                                    <div class="form-group">
+                                        <div>
+                                            <p><b>LEAF ATTRIBUTES</b></p>
+                                        </div>
+                                        <select id="newTreeLeafFormSelect" style="border-radius: 0px;">
+                                            <option value="readonly">Read Only</option>
+                                            <option value="function">Function</option>
+                                        </select>
+                                        <div class="newTreeLeafFormReadOnly" >
+                                            <div class="spacer"></div>
+                                            <label for="newTreeLeafFormCommandDetail">COMMAND DETAIL</label>
+                                            <textarea id="newTreeLeafFormCommandDetail" rows="4" cols="50"></textarea>
+                                            <div class="spacer"></div>
+                                        </div>
+                                        <div class="newTreeLeafFormFunction" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="newTreeLeafFormFunctionName">FUNCTION NAME</label>
+                                            <input type="text" class="form-control" id="newTreeLeafFormFunctionName" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                            <button id="newTreeModalApply" type="button" class="btn btn-darkGreen" >Apply</button>
+                        <div class="spacer"></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Full Command Modal -->
+    <div class="modal fade" id="fullCommandModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Add Full Command
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-sm-12" style=" background-color:#FCFAFC;font-size: 20px;border: 1px solid #26384D;">
+                        <div class="fullCommandConfigurationForms" hidden>
+                            <div class="fullCommandBranchForm" hidden>
+                                <form id="fullCommandBranchForm" role="form">
+                                    <div class="form-group">
+                                        <div class="fullCommandBranchFormFixed">
+                                            <div class="spacer"></div>
+                                            <label for="fullCommandInput">Enter full command e.g. what is your name</label>
+                                            <input type="text" class="form-control" id="fullCommandInput" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="fullCommandForm" hidden>
+                                <form id="fullCommandForm" role="form">
+                                    <div class="form-group">
+                                        <div>
+                                            <p><b>LEAF ATTRIBUTES</b></p>
+                                        </div>
+                                        <select id="fullCommandFormSelect" style="border-radius: 0px;">
+                                            <option value="readonly">Read Only</option>
+                                            <option value="function">Function</option>
+                                        </select>
+                                        <div class="fullCommandFormReadOnly" >
+                                            <div class="spacer"></div>
+                                            <label for="fullCommandFormCommandDetail">COMMAND DETAIL</label>
+                                            <textarea id="fullCommandFormCommandDetail" rows="4" cols="50"></textarea>
+                                            <div class="spacer"></div>
+                                        </div>
+                                        <div class="fullCommandFormFunction" hidden>
+                                            <div class="spacer"></div>
+                                            <label for="fullCommandFormFunctionName">FUNCTION NAME</label>
+                                            <input type="text" class="form-control" id="fullCommandFormFunctionName" />
+                                            <div class="spacer"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <button type="button" class="btn btn-darkRed" data-dismiss="modal">Cancel</button>
+                            <button id="fullCommandModalApply" type="button" class="btn btn-darkGreen" >Apply</button>
+                        <div class="spacer"></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" 
+        aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Error
+                    </h4>
+                </div>
+                <!-- Modal Body -->
+                <div id="alertModalText" class="modal-body">
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-darkPurple" data-dismiss="modal">Ok</button>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+// Used for import function
+document.getElementById("jsonFile").addEventListener("change", handleFileSelect, false);
+
+//dropdown menu
+$(function() {
+    $(".dropdown").hover(
+        function() {
+            $(".dropdown-menu", this).stop(true, true).fadeIn("fast");
+            $(this).toggleClass("open");
+        },
+
+        function() {
+            $(".dropdown-menu", this).stop(true, true).fadeOut("fast");
+            $(this).toggleClass("open");
+        }
+    );
+});
+
+
+
+function showAlert(message) {
+    $("#alertModalText").html("<div style='border-radius: 0 !important;' class='alert alert-danger'>" + message + "</div>");
+    $("#alertModal").modal()
+}
+
+
+// This is used for importing an existing tree
+
+function handleFileSelect(evt) {
+
+    var cancelled = false;
+
+    $("#saveCurrentTreeModalImport").modal()
+
+    $("#saveButtonImport").on("click", function(event) {
+
+        // create a blank array
+        var treeArray = [];
+        var usageArray = [];
+        var jsonTree = "";
+
+        if ($("#buildTree").children().length > 0) {
+            jsonTree = JSON.stringify(exportTree(".treeConnectors", usageArray), null, 4);
+        }
+
+        var blob = new Blob([jsonTree], {
+            type: "application/json"
+        });
+        var url = URL.createObjectURL(blob);
+
+        $("#saveButtonImport").attr("href", url)
+        $("#saveButtonImport").attr("download", "commands.json")
+
+
+        $("#saveCurrentTreeModalImport").modal("hide");
+    });
+
+    $("#noSaveButtonImport").on("click", function(event) {
+
+        $("#saveCurrentTreeModalImport").modal("hide");
+
+    });
+
+
+    $("#cancelButtonImport").on("click", function(event) {
+
+        cancelled = true;
+
+        $("#saveCurrentTreeModalImport").modal("hide");
+
+    });
+
+    $("#saveCurrentTreeModalImport").on("hidden.bs.modal", function() {
+
+        if (!cancelled) {
+
+            //builds the json tree when the load tree button is clicked
+
+            var files = evt.target.files; // FileList object
+
+            f = files[0];
+
+            // Using substr to check file extension rather than application/json as windows doesn"t support application/json
+            // https://github.com/eligrey/FileSaver.js/issues/180
+
+            if (f.name.substr(f.name.length - 5) == ".json") {
+                var reader = new FileReader();
+
+                // Closure to capture the file information.
+                reader.onload = (function(theFile) {
+                    return function(e) {
+
+                        jsonObj = "";
+
+                        try {
+
+                            jsonObj = JSON.parse(e.target.result);
+
+                            //reset jsonFile so that you can load another file
+                            $("#jsonFile").val(null);
+                        } catch (err) {
+                            showAlert(err);
+
+                            //reset jsonFile so that you can load another file
+                            $("#jsonFile").val(null);
+
+                        }
+
+                        if (jsonObj) {
+                            $.ajax({
+                                url: window.location.href + "validate",
+                                method: "POST",
+                                type: "POST",
+                                data: JSON.stringify(jsonObj),
+                                contentType: "application/json; charset=utf-8",
+                                success: function(data) {
+
+                                    //if there are no errors then build the tree, otherwise let the user know what needs fixing
+
+                                    if (data.validationErrors.length == 0) {
+                                        $(buildTree).html(data.tree);
+
+                                    } else {
+                                        errorOutput = "<b><big>Validation Results:</big></b>";
+
+
+                                        for (i = 0; i < data.validationErrors.length; i++) {
+                                            errorOutput += "<BR>";
+                                            errorOutput += "<BR><b> Object: </b>" + data.validationErrors[i][0].object;
+                                            errorOutput += "<BR><b> Attribute: </b> " + data.validationErrors[i][0].attribute;
+                                            errorOutput += "<BR><b> Issue: </b> " + data.validationErrors[i][0].issue;
+                                        }
+
+                                        showAlert(errorOutput);
+
+                                    }
+
+                                },
+                                error: function(err) {
+
+                                    showAlert(err);
+
+                                }
+                            });
+                        }
+
+                    };
+                })(f);
+
+                reader.readAsText(f);
+            } else {
+                showAlert("Incorrect file format. Only JSON accepted")
+            }
+
+        }
+    })
+
+}
+
+$(function() {
+    $.contextMenu({
+        selector: ".parent_li",
+        callback: function(key, options) {
+
+
+            switch (key) {
+                case "add-current":
+
+                    $("#addCurrentCommandLeafForm")[0].reset();
+                    $("#addCurrentCommandBranchForm")[0].reset();
+
+                    $("#addCurrentCommandLeafFormSelect").val("readonly");
+                    $(".addCurrentCommandLeafFormReadOnly").show();
+                    $(".addCurrentCommandLeafFormFunction").hide();
+
+                    $("#addCurrentCommandBranchFormSelect").val("fixed");
+                    $(".addCurrentCommandBranchFormFixed").show();
+                    $(".addCurrentCommandBranchFormConfigurable").hide();
+
+                    $("#addCurrentCommandLeafBranchSelect").val("leaf");
+                    $(".addCurrentCommandBranchForm").show();
+                    $(".addCurrentCommandLeafForm").show();
+
+
+                    $(".addCurrentCommandBranchForm").show();
+                    $(".addCurrentCommandLeafForm").show();
+
+                    $(".addCurrentCommandConfigurationForms").show();
+
+
+                    //adds a command to the same level as the selected command 
+
+                    $("#addCurrentCommandModal").modal()
+
+                    $("#addCurrentCommandConfigurationFormsApply").on("click", function(event) {
+
+                        var validationErrors = [];
+
+
+
+                        // Validate input
+                        $("#addCurrentCommandBranchForm input[type=text]").not(":hidden").each(function() {
+
+                            if ($(this).val() == "") {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Input required'
+                                }]);
+                            }
+
+                            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                    validationErrors.push([{
+                                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                        'issue': 'Single word only - No special characters'
+                                    }]);
+                                }
+                            }
+
+
+
+
+                        });
+
+                        // Validate input
+                        $("#addCurrentCommandLeafForm input[type=text],textarea").not(":hidden").each(function() {
+
+                            if ($(this).val() == "") {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Input required'
+                                }]);
+                            }
+
+                            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                    validationErrors.push([{
+                                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                        'issue': 'Single word only - No special characters'
+                                    }]);
+                                }
+                            }
+
+                        });
+
+
+
+
+                        if (validationErrors.length == 0) {
+
+                            if ($("#addCurrentCommandLeafBranchSelect option:selected").val() == "leaf") {
+
+                                if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "fixed") {
+                                    $(options.$trigger).parent().append(
+                                        $('<li elementtype="branch" class="parent_li" id="' + $("#addCurrentCommandBranchFormCommandFixed").val() + '">').append(
+                                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append($("#addCurrentCommandBranchFormCommandFixed").val())
+                                        ));
+
+                                } else if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "configurable") {
+                                    $(options.$trigger).parent().append(
+                                        $('<li elementtype="branch" class="parent_li" id="$$">').append(
+                                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                        ));
+                                    $(options.$trigger).append(
+                                        $('<li hidden class="parent_li" id="argumentName">').append($("#addCurrentCommandBranchFormArgument").val())
+                                    );
+
+                                }
+
+
+                                if ($("#addCurrentCommandLeafFormSelect option:selected").val() == "readonly") {
+                                    (options.$trigger).parent().children("li").last().append(
+                                        $("<ul>").append()
+                                    );
+
+                                    $(options.$trigger).parent().children("li").last().children("ul").append(
+                                        $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                                    );
+
+                                    $(options.$trigger).parent().children("li").last().children("ul").append(
+                                        $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append($("#addCurrentCommandLeafFormCommandDetail").val())
+                                    );
+
+                                } else if ($("#addCurrentCommandLeafFormSelect option:selected").val() == "function") {
+                                    (options.$trigger).parent().children("li").last().append(
+                                        $("<ul>").append()
+                                    );
+
+                                    $(options.$trigger).parent().children("li").last().children("ul").append(
+                                        $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                                    );
+
+                                    $(options.$trigger).parent().children("li").last().children("ul").append(
+                                        $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($("#addCurrentCommandLeafFormFunctionName").val())
+                                    );
+
+                                }
+
+                                event.stopImmediatePropagation();
+
+                                $("#addCurrentCommandModal").modal("hide");
+
+                            } else if ($("#addCurrentCommandLeafBranchSelect option:selected").val() == "branch") {
+
+                                if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "fixed") {
+                                    $(options.$trigger).parent().append(
+                                        $('<li elementtype="branch" class="parent_li" id="' + $("#addCurrentCommandBranchFormCommandFixed").val() + '">').append(
+                                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append($("#addCurrentCommandBranchFormCommandFixed").val())
+                                        ));
+
+                                } else if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "configurable") {
+                                    $(options.$trigger).parent().append(
+                                        $('<li elementtype="branch" class="parent_li" id="$$">').append(
+                                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                        ));
+                                    $(options.$trigger).append(
+                                        $('<li hidden class="parent_li" id="argumentName">').append($("#addCurrentCommandBranchFormArgument").val()));
+
+                                }
+
+                                event.stopImmediatePropagation();
+
+                                $("#addCurrentCommandModal").modal("hide");
+
+                            }
+                        } else {
+                            errorOutput = "<b><big>Validation Results:</big></b>";
+
+
+                            for (i = 0; i < validationErrors.length; i++) {
+                                errorOutput += "<BR>";
+                                errorOutput += "<BR><b> Field: </b>" + validationErrors[i][0].object;
+                                errorOutput += "<BR><b> Problem: </b> " + validationErrors[i][0].issue;
+                            }
+
+                            showAlert(errorOutput);
+
+                        }
+
+
+
+                    });
+
+
+
+                    break;
+                case "add-next":
+
+
+                    $("#addNextCommandLeafForm")[0].reset();
+                    $("#addNextCommandBranchForm")[0].reset();
+
+                    $("#addNextCommandLeafFormSelect").val("readonly");
+                    $(".addNextCommandLeafFormReadOnly").show();
+                    $(".addNextCommandLeafFormFunction").hide();
+
+                    $("#addNextCommandBranchFormSelect").val("fixed")
+                    
+                    $(".addNextCommandBranchFormFixed").show();
+                    $(".addNextCommandBranchFormConfigurable").hide();
+
+                    $("#addNextCommandLeafBranchSelect").val("leaf")
+                    $(".addNextCommandBranchForm").show();
+                    $(".addNextCommandLeafForm").show();
+
+                    var moveThisLeaf = "";
+
+                    if (options.$trigger.children("ul").children("li:first-child").attr("id") == "commandType") {
+                        moveThisLeaf = options.$trigger.children("ul").detach();
+                    }
+
+                    if (moveThisLeaf != "") {
+
+
+                        // If the command is read only then it simply returns some data (name and detail)
+                        // If the command is a function then it returns the name of the function
+                        if (moveThisLeaf.children("li:first-child").text() == "readonly") {
+
+
+                            $("#addNextCommandLeafFormCommandDetail").val(moveThisLeaf.children("li").next("#detail").text());
+
+                            $(".addNextCommandLeafFormReadOnly").show();
+                            $(".addNextCommandLeafFormFunction").hide();
+
+                        } else if (moveThisLeaf.children("li:first-child").text() == "function") {
+
+                            $("#addNextCommandLeafFormSelect").val("function")
+                            $("#addNextCommandLeafFormFunctionName").val(moveThisLeaf.children("li").next("#function").text());
+
+                            $(".addNextCommandLeafFormReadOnly").hide();
+                            $(".addNextCommandLeafFormFunction").show();
+
+                        }
+
+                        $(".addNextCommandLeafForm").show();
+
+                    }
+
+
+                    $(".addNextCommandBranchForm").show();
+                    $(".addNextCommandLeafForm").show();
+
+                    $(".addNextCommandConfigurationForms").show();
+
+
+                    //adds a command to the next level from the selected command 
+
+                    $("#addNextCommandModal").modal()
+
+                    $("#addNextCommandConfigurationFormsApply").on("click", function(event) {
+
+                        var validationErrors = [];
+
+                        // Validate input
+                        $("#addNextCommandBranchForm input[type=text]").not(":hidden").each(function() {
+
+                            if ($(this).val() == "") {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Input required'
+                                }]);
+                            }
+
+
+                            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                    validationErrors.push([{
+                                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                        'issue': 'Single word only - No special characters'
+                                    }]);
+                                }
+                            }
+
+                        });
+
+                        // Validate input
+                        $("#addNextCommandLeafForm input[type=text],textarea").not(":hidden").each(function() {
+
+                            if ($(this).val() == "") {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Input required'
+                                }]);
+                            }
+
+                            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                    validationErrors.push([{
+                                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                        'issue': 'Single word only - No special characters'
+                                    }]);
+                                }
+                            }
+
+                        });
+
+
+
+
+                        if (validationErrors.length == 0) {
+
+
+                            if ($("#addNextCommandLeafBranchSelect option:selected").val() == "leaf") {
+
+
+                                if ($("#addNextCommandBranchFormSelect option:selected").val() == "fixed") {
+                                    if ($(options.$trigger).children("ul").length) {
+
+
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li elementtype="branch" class="parent_li" id ="' + $('#addNextCommandBranchFormCommandFixed').val() + '">').append(
+                                                $('<span>').attr('style', 'font-size:22px; color:#26384D').append($('#addNextCommandBranchFormCommandFixed').val())
+                                            ));
+
+
+                                    } else {
+
+                                        $(options.$trigger).append(
+                                            $('<ul>').append(
+                                                $('<li elementtype="branch" class="parent_li" id ="' + $('#addNextCommandBranchFormCommandFixed').val() + '">').append(
+                                                    $('<span>').attr('style', 'font-size:22px; color:#26384D').append($('#addNextCommandBranchFormCommandFixed').val())
+                                                )));
+
+
+                                    }
+
+                                } else if ($("#addNextCommandBranchFormSelect option:selected").val() == "configurable") {
+                                    if ($(options.$trigger).children("ul").length) {
+
+
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li elementtype="branch" class="parent_li" id ="$$">').append(
+                                                $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                            ));
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li hidden elementtype="leaf" id="argumentName">').append($("#addNextCommandBranchFormArgument").val()));
+
+
+
+                                    } else {
+                                        $(options.$trigger).append(
+                                            $('<ul>').append(
+                                                $('<li elementtype="branch" class="parent_li" id="$$" >').append(
+                                                    $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                                )));
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li hidden elementtype="leaf" id="argumentName">').append($("#addNextCommandBranchFormArgument").val()));
+
+                                    }
+
+                                }
+
+                                if ($("#addNextCommandLeafFormSelect option:selected").val() == "readonly") {
+
+
+                                    if ($(options.$trigger).children("ul").children("ul").length) {
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append($("#addNextCommandLeafFormCommandDetail").val())
+                                        );
+                                    } else {
+                                        (options.$trigger).children("ul").children("li:first-child").append(
+                                            $('<ul>').append()
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append($("#addNextCommandLeafFormCommandDetail").val())
+                                        );
+                                    }
+
+
+
+                                } else if ($("#addNextCommandLeafFormSelect option:selected").val() == "function") {
+                                    if ($(options.$trigger).children("ul").children("ul").length) {
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($("#addNextCommandLeafFormFunctionName").val())
+                                        );
+                                    } else {
+                                        (options.$trigger).children("ul").children("li:first-child").append(
+                                            $('<ul>').append()
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                                        );
+
+                                        $(options.$trigger).children("ul").children("li:first-child").children("ul").append(
+                                            $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($("#addNextCommandLeafFormFunctionName").val())
+                                        );
+
+                                    }
+
+
+
+                                }
+
+
+                                event.stopImmediatePropagation();
+
+                                $("#addNextCommandModal").modal("hide");
+
+                            } else if ($("#addNextCommandLeafBranchSelect option:selected").val() == "branch") {
+
+                                if ($("#addNextCommandBranchFormSelect option:selected").val() == "fixed") {
+
+                                    if ($(options.$trigger).children("ul").length) {
+
+
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li elementtype="branch" class="parent_li" id ="' + $('#addNextCommandBranchFormCommandFixed').val() + '">').append(
+                                                $('<span>').attr('style', 'font-size:22px; color:#26384D').append($('#addNextCommandBranchFormCommandFixed').val())
+                                            ));
+
+
+                                    } else {
+
+                                        $(options.$trigger).append(
+                                            $('<ul>').append(
+                                                $('<li elementtype="branch" class="parent_li" id ="' + $('#addNextCommandBranchFormCommandFixed').val() + '">').append(
+                                                    $('<span>').attr('style', 'font-size:22px; color:#26384D').append($('#addNextCommandBranchFormCommandFixed').val())
+                                                )));
+
+
+                                    }
+
+                                } else if ($("#addNextCommandBranchFormSelect option:selected").val() == "configurable") {
+
+                                    if ($(options.$trigger).children("ul").length) {
+
+
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li elementtype="branch" class="parent_li" id ="$$">').append(
+                                                $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                            ));
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li hidden elementtype="leaf" id="argumentName">').append($("#addNextCommandBranchFormArgument").val()));
+
+
+
+                                    } else {
+                                        $(options.$trigger).append(
+                                            $('<ul>').append(
+                                                $('<li elementtype="branch" class="parent_li" id="$$" >').append(
+                                                    $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                                )));
+                                        $(options.$trigger).children("ul").append(
+                                            $('<li hidden elementtype="leaf" id="argumentName">').append($("#addNextCommandBranchFormArgument").val()));
+
+
+
+
+                                    }
+
+                                }
+
+                                $(options.$trigger).children("ul").children("li:first-child").append(
+                                    moveThisLeaf
+                                );
+
+                                event.stopImmediatePropagation();
+
+                                $("#addNextCommandModal").modal("hide");
+
+                            }
+                        } else {
+                            errorOutput = "<b><big>Validation Results:</big></b>";
+
+
+                            for (i = 0; i < validationErrors.length; i++) {
+                                errorOutput += "<BR>";
+                                errorOutput += "<BR><b> Field: </b>" + validationErrors[i][0].object;
+                                errorOutput += "<BR><b> Problem: </b> " + validationErrors[i][0].issue;
+                            }
+
+                            showAlert(errorOutput);
+
+                        }
+
+
+                    });
+
+
+
+
+                    break;
+
+                case "delete-current-selected":
+
+                    $("#deleteCurrentSelectedModal").modal()
+
+                    $("#deleteCurrentSelectedConfigurationFormsApply").on("click", function(event) {
+
+
+                        var currentSelect = $(options.$trigger).children("ul").children();
+
+                        console.log($(options.$trigger).parent())
+                        $(options.$trigger).parent().append(currentSelect);
+
+                        $(options.$trigger).remove();
+
+                        $(options.$trigger).trigger("click");
+
+                        event.stopImmediatePropagation();
+                        $("#deleteCurrentSelectedModal").modal("hide");
+
+
+                    });
+
+
+                    break;
+
+                case "delete-entire-branch":
+
+                    $("#deleteEntireModal").modal()
+
+                    $("#deleteEntireConfigurationFormsApply").on("click", function(event) {
+
+                        $(options.$trigger).remove();
+
+                        $(options.$trigger).trigger("click");
+
+                        event.stopImmediatePropagation();
+                        $("#deleteEntireModal").modal("hide");
+
+
+                    });
+
+
+                    break;
+
+            }
+        },
+        items: {
+            "add-current": {
+                name: "Add current level",
+                icon: "add"
+            },
+            "add-next": {
+                name: "Add next level",
+                icon: "add"
+            },
+            "delete-current-selected": {
+                name: "Delete current selected command",
+                icon: "delete"
+            },
+            "delete-entire-branch": {
+                name: "Delete entire branch",
+                icon: "delete"
+            }
+        }
+    });
+
+});
+
+// Used to parse the command and returns the command as an array of arguments
+
+function parse(str, lookForQuotes) {
+    var args = [];
+    var readingPart = false;
+    var part = '';
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) === ' ' && !readingPart) {
+            args.push(part);
+            part = '';
+        } else {
+            if (str.charAt(i) === '\"' && lookForQuotes) {
+                readingPart = !readingPart;
+            } else {
+                part += str.charAt(i);
+            }
+        }
+    }
+    if (part != '') {
+        args.push(part);
+    }
+    return args;
+
+}
+
+function addFullCommand(commandPosition, args, argPos) {
+
+
+    var commandFound = false;
+
+    /**
+     *
+     *   For each li span in a list check if current argument is found
+     *   If it is then go to the next level and increase argument position
+     *   If not found then for each argument remaining add the branches
+     *
+     */
+
+
+
+    if (argPos < args.length) {
+
+
+        $(commandPosition).children("li").not(":hidden").each(function() {
+
+
+            if ($(this).children("span").text() == args[argPos]) {
+
+                addFullCommand($(this).children("ul"), args, argPos + 1);
+                commandFound = true;
+            }
+
+        });
+
+        if (!commandFound) {
+
+
+            var currentCommandPosition = $(commandPosition);
+
+
+            for (i = argPos; i < args.length; i++) {
+
+                if (i == args.length - 1) {
+
+
+                    if ($("#fullCommandFormSelect option:selected").val() == "readonly") {
+
+
+                        $(currentCommandPosition).append(
+                            $('<li elementtype="branch" class="parent_li" id="' + args[i] + '">')
+                        );
+
+
+                        $(currentCommandPosition).children("li:last-child").append(
+                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append(args[i])
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").append(
+                            $('<ul>').append()
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").children("ul").append(
+                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").children("ul").append(
+                            $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append($("#fullCommandFormCommandDetail").val())
+                        );
+
+                    } else if ($("#fullCommandFormSelect option:selected").val() == "function") {
+                        $(currentCommandPosition).append(
+                            $('<li elementtype="branch" class="parent_li" id="' + args[i] + '">')
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").append(
+                            $('<span>').attr('style', 'font-size:22px; color:#26384D').append(args[i])
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").children("ul").append(
+                            $('<ul>').append()
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").children("ul").append(
+                            $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                        );
+
+                        $(currentCommandPosition).children("li:last-child").children("ul").append(
+                            $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($("#fullCommandFormFunctionName").val())
+                        );
+
+                    }
+
+                } else {
+
+                    $(currentCommandPosition).append(
+                        $('<li elementtype="branch" class="parent_li" id="' + args[i] + '">').append()
+                    );
+
+                    $(currentCommandPosition).children("li:last-child").append(
+                        $('<span>').attr('style', 'font-size:22px; color:#26384D').append(args[i])
+                    );
+
+
+                    $(currentCommandPosition).children("li:last-child").append(
+                        $('<ul>')
+                    );
+
+
+
+                    currentCommandPosition = $(currentCommandPosition).children("li:last-child").children("ul");
+
+                }
+
+            }
+        }
+
+
+
+    }
+
+}
+
+// Recursive function which returns a built tree array
+
+function exportTree(currentPos, usageArray) {
+
+    var treeArray = [];
+    var usageString = "";
+    var availableSubcommands = "";
+
+    // If we find an unordered list then for each list item validate properties
+
+    if ($(currentPos).children("ul").length) {
+        var temp = {};
+        var argumentName = {};
+
+        // If it finds $$ then we're looking for user input in which case we also need to return the argumentName (i.e. this is the key, the value is what the user inputs in the chat window)
+
+        // If the list item contains a leaf as indicated by the presence of "CommandType" then we need to go through each of the child list items which make up the leaf and return them
+
+        $(currentPos).children("ul").children("li").each(function() {
+
+            if ($(this).prev("li").attr("id") == "$$") {
+
+                var argumentNameValue = $(this).text();
+
+                temp["argumentName"] = argumentNameValue;
+
+            } else if ($(currentPos).children("ul").children("li:first-child").attr("id") == "commandType") {
+
+                $(currentPos).children("ul").children("li").each(function() {
+
+                    var key = $(this).attr("id");
+                    var value = $(this).text();
+
+                    temp[key] = value;
+
+                });
+
+            } else {
+
+                // If it's not user input and it's not a leaf then it must be a branch and still contain child objects
+                // In this case call the exportTree function again and return whatever children commands/objects it has.
+
+                usageArray.push($(this).attr("id"));
+
+                var key = $(this).attr("id");
+
+                var lowerObjects = exportTree($(this), usageArray);
+
+                temp[key] = lowerObjects;
+
+            }
+        });
+
+    }
+
+    // Build the usage string which is displayed to a user to show the available subcommands when an incorrect command is used.
+    // Usage string is built for each command  at each level
+
+    usageString = "Usage: " + $("#botName").val() + " ";
+
+    for (i = 0; i < usageArray.length; i++) {
+        if (usageArray[i] == "$$") {
+            usageString += " <text>";
+        } else {
+            usageString += usageArray[i];
+            usageString += " ";
+        }
+
+
+
+    }
+
+    // Usage string continued
+    if ($(currentPos).children("ul").children("li").length && $(currentPos).children("ul").children("li").children("ul").children("li").length) {
+        usageString += " <command> \n \n    Available Subcommands: \n        ";
+    } else {
+        usageString += " \n \n    Available Subcommands: \n        ";
+    }
+
+    // Usage string continued
+    $(currentPos).children("ul").children("li").each(function() {
+        if ($(this).attr("id") != "undefined" && $(this).children("ul").children("li").length) {
+
+            if ($(this).attr("id") == "$$") {
+                availableSubcommands += "<text> \n        ";
+            } else {
+                availableSubcommands += $(this).attr("id");
+                availableSubcommands += " \n        ";
+            }
+
+
+        }
+    })
+
+    usageString += availableSubcommands;
+
+    temp["usage"] = usageString;
+
+    treeArray.push(temp);
+
+    usageArray.pop();
+
+    return treeArray[0];
+
+
+
+
+}
+
+
+
+
+$(document).ready(function() {
+
+    var currentSelectedCommand = null;
+
+
+
+
+    //changes the font colour for the selected command
+    //depending on which element is selected either shows the branch config or leaf config
+
+    previousLabel = null;
+
+    $(document).on("focus click", "#buildTree ul li span", function(event) {
+
+        $("#leafForm")[0].reset();
+        $("#branchForm")[0].reset();
+
+        currentSelectedCommand = $(this);
+
+
+        // if the selected command has a child ul and li (will be hidden) with a commandType then we've found a leaf
+        // otherwise we've found a branch. Load different forms depending on what we find.
+        if ($(this).parent("li").children("ul").children("li:first-child").attr("id") == "commandType") {
+
+
+
+            // On a leaf we load the branch form and the leaf form
+            // - Branch form to allow update of the command
+            // - Leaf form to adjust the leaf properties i.e the answer returned by the command
+
+            // If the command name is looking for user input then select the "configurable" branchform
+            // Load the values into the text inputs so they can be viewed and modified
+            // Storing the values as the text in the list items, rather than an attribute of the li itself
+
+            // e.g. <li id="commandName">doSomethingComand</li>
+            // Rather than <li id="commandName" value="doSomethingCommand"</li>
+
+            // This will allow for values and text to contain special characters 
+
+            // If its not a user input then its a fixed command 
+
+
+
+            if ($(this).parent("li").attr("id") == "$$") {
+
+
+                $("#branchFormSelect").val("configurable")
+
+
+                $("#branchFormArgument").val($(this).parent("li").next("#argumentName").text());
+
+                $("#branchFormCommandConfigurable").val($(this).parent("li").attr("id"));
+
+                $(".branchFormFixed").hide();
+                $(".branchFormConfigurable").show();
+
+                $(".branchForm").show();
+            } else {
+                $("#branchFormSelect").val("fixed")
+
+                $("#branchFormCommandFixed").val($(this).parent("li").attr("id"));
+
+                $(".branchFormFixed").show();
+                $(".branchFormConfigurable").hide();
+            }
+
+
+            // If the command is read only then it simply returns some data (name and detail)
+            // If the command is a function then it returns the name of the function
+            if ($(this).parent("li").children("ul").children("li:first-child").text() == "readonly") {
+
+
+                $("#leafFormCommandDetail").val($(this).parent("li").children("ul").children("li").next("#detail").text());
+
+                $(".leafFormReadOnly").show();
+                $(".leafFormFunction").hide();
+
+            } else if ($(this).parent("li").children("ul").children("li:first-child").text() == "function") {
+
+                $("#leafFormSelect").val("function")
+                $("#leafFormFunctionName").val($(this).parent("li").children("ul").children("li").next("#function").text());
+
+
+                $(".leafFormReadOnly").hide();
+                $(".leafFormFunction").show();
+
+            }
+
+            $(".leafForm").show();
+
+
+        } else {
+
+
+            // If it"s not a leaf then its a branch i.e there still exist subcommands under the selected command
+            // In this case do the same as above - user input vs fixed
+            if ($(this).parent("li").attr("id") == "$$") {
+
+                $("#branchFormSelect").val("configurable")
+                $("#branchFormArgument").val($(this).parent("li").next("#argumentName").text());
+                $("#branchFormCommandConfigurable").val($(this).parent("li").attr("id"));
+                $(".branchFormFixed").hide();
+                $(".branchFormConfigurable").show();
+            } else {
+                $("#branchFormSelect").val("fixed")
+                $("#branchFormCommandFixed").val($(this).parent("li").attr("id"));
+                $(".branchFormFixed").show();
+                $(".branchFormConfigurable").hide();
+            }
+
+
+
+
+            $(".branchForm").show();
+            $(".leafForm").hide();
+
+
+
+        }
+
+
+        // Update the colour of the command based on what"s selected
+        // Also keep track of the previous command to reset the colour when it loses focus
+
+        current = $(this)[0];
+
+        if (previousLabel != null) {
+            previousLabel.style.color = "#26384D";
+        }
+
+        current.style.color = "red";
+
+        previousLabel = $(this)[0];
+
+        $(".configurationForms").show();
+
+    });
+
+    // When the reset button is pressed then repopulate the fields with the original text values
+    // Same as the loading above 
+    $("#configurationFormsReset").click(function() {
+        $("#branchFormCommandFixed").val(currentSelectedCommand.parent("li").attr("id"));
+        $("#branchFormCommandConfigurable").val("$$");
+        $("#branchFormArgument").val(currentSelectedCommand.parent("li").next("#argumentName").text());
+        $("#leafFormCommandDetail").val(currentSelectedCommand.parent("li").children("ul").children("li").next("#detail").text());
+        $("#leafFormFunctionName").val(currentSelectedCommand.parent("li").children("ul").children("li").next("#function").text());
+    });
+
+    // The Configuration Form is located on the right hand side of the page and is updated when a command is selected
+
+    $("#configurationFormsApply").click(function() {
+
+        var validationErrors = [];
+
+        // Validate input
+        $("#branchForm input[type=text]").not(":hidden").each(function() {
+
+            if ($(this).val() == "") {
+                validationErrors.push([{
+                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                    'issue': 'Input required'
+                }]);
+            }
+
+            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                    validationErrors.push([{
+                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                        'issue': 'Single word only - No special characters'
+                    }]);
+                }
+            }
+
+
+
+        });
+
+        // Validate input
+        $("#leafForm input[type=text],textarea").not(":hidden").each(function() {
+
+            if ($(this).val() == "") {
+                validationErrors.push([{
+                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                    'issue': 'Input required'
+                }]);
+            }
+
+            if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                    validationErrors.push([{
+                        'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                        'issue': 'Single word only - No special characters'
+                    }]);
+                }
+            }
+
+        });
+
+
+
+        // If there are no errors then proceed with update
+        if (validationErrors.length == 0) {
+
+            // First check if it"s a leaf by looking for the "CommandType" and then update based on the leaf type, either fixed or user input
+            // If it"s not a leaf then update based on the branch properties
+            if (currentSelectedCommand.parent("li").children("ul").children("li:first-child").attr("id") == "commandType") {
+
+
+                if ($("#branchFormSelect option:selected").val() == "fixed") {
+
+                    currentSelectedCommand.parent("li").attr("id", $("#branchFormCommandFixed").val());
+                    currentSelectedCommand.parent("li").children("span").text($("#branchFormCommandFixed").val());
+                    currentSelectedCommand.parent("li").parent("ul").children("li").remove("#argumentName");
+
+
+                } else if ($("#branchFormSelect option:selected").val() == "configurable") {
+
+                    currentSelectedCommand.parent("li").attr("id", $("#branchFormCommandConfigurable").val());
+                    currentSelectedCommand.parent("li").children("span").text("$$");
+                    currentSelectedCommand.parent("li").parent("ul").append(
+                        $('<li hidden class="parent_li" id="argumentName">').append(
+                            $("#branchFormArgument").val()
+
+                        ));
+
+
+                }
+
+
+                if ($("#leafFormSelect option:selected").val() == "readonly") {
+
+                    currentSelectedCommand.parent("li").children("ul").empty();
+
+                    currentSelectedCommand.parent("li").children("ul").append(
+                        $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                    );
+
+
+
+                    commandDetail = "";
+                    commandDetail = $("#leafFormCommandDetail").val()
+                    commandDetail = commandDetail.trim();
+
+                    currentSelectedCommand.parent("li").children("ul").append(
+                        $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append(commandDetail)
+                    );
+
+                } else if ($("#leafFormSelect option:selected").val() == "function") {
+
+                    currentSelectedCommand.parent("li").children("ul").empty();
+
+                    currentSelectedCommand.parent("li").children("ul").append(
+                        $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                    );
+
+                    currentSelectedCommand.parent("li").children("ul").append(
+                        $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($('#leafFormFunctionName').val())
+                    );
+
+                }
+
+            } else {
+                if ($("#branchFormSelect option:selected").val() == "fixed") {
+                    currentSelectedCommand.parent("li").attr("id", $("#branchFormCommandFixed").val());
+                    currentSelectedCommand.parent("li").children("span").text($("#branchFormCommandFixed").val());
+                    currentSelectedCommand.parent("li").children("li").remove("#argumentName");
+
+
+                } else if ($("#branchFormSelect option:selected").val() == "configurable") {
+                    currentSelectedCommand.parent("li").attr("id", $("#branchFormCommandConfigurable").val());
+                    currentSelectedCommand.parent("li").children("span").text("$$");
+                    currentSelectedCommand.parent("li").append(
+                        $('<li hidden class="parent_li" id="argumentName">').append(
+                            $("#branchFormArgument").val()
+
+                        ));
+
+                }
+            }
+
+        } else {
+            // If validation errors were found then show the alert modal
+
+            errorOutput = "<b><big>Validation Results:</big></b>";
+
+
+            for (i = 0; i < validationErrors.length; i++) {
+                errorOutput += "<BR>";
+                errorOutput += "<BR><b> Field: </b>" + validationErrors[i][0].object;
+                errorOutput += "<BR><b> Problem: </b> " + validationErrors[i][0].issue;
+            }
+
+            showAlert(errorOutput);
+
+        }
+
+
+        // Manually trigger the selected command "focus click" event which will then reload the forms from the command list elements
+        // This ensures that the values are correct and also the for things like trimming above it will reload after the trim
+
+        $(currentSelectedCommand).trigger("click");
+
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#branchFormSelect").change(function() {
+
+        if ($("#branchFormSelect option:selected").val() == "fixed") {
+            $(".branchFormFixed").show();
+            $(".branchFormConfigurable").hide();
+        } else if ($("#branchFormSelect option:selected").val() == "configurable") {
+            $(".branchFormFixed").hide();
+            $(".branchFormConfigurable").show();
+        }
+    });
+
+    $("#addCurrentCommandBranchFormSelect").change(function() {
+
+        if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "fixed") {
+            $(".addCurrentCommandBranchFormFixed").show();
+            $(".addCurrentCommandBranchFormConfigurable").hide();
+        } else if ($("#addCurrentCommandBranchFormSelect option:selected").val() == "configurable") {
+            $(".addCurrentCommandBranchFormFixed").hide();
+            $(".addCurrentCommandBranchFormConfigurable").show();
+        }
+    });
+
+
+
+    // Monitor the drop down lists and update on change
+    $("#fullCommandFormSelect").change(function() {
+
+        if ($("#fullCommandFormSelect option:selected").val() == "readonly") {
+            $(".fullCommandFormReadOnly").show();
+            $(".fullCommandFormFunction").hide();
+        } else if ($("#fullCommandFormSelect option:selected").val() == "function") {
+            $(".fullCommandFormReadOnly").hide();
+            $(".fullCommandFormFunction").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#leafFormSelect").change(function() {
+
+        if ($("#leafFormSelect option:selected").val() == "readonly") {
+            $(".leafFormReadOnly").show();
+            $(".leafFormFunction").hide();
+        } else if ($("#leafFormSelect option:selected").val() == "function") {
+            $(".leafFormReadOnly").hide();
+            $(".leafFormFunction").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#addCurrentCommandLeafFormSelect").change(function() {
+
+        if ($("#addCurrentCommandLeafFormSelect option:selected").val() == "readonly") {
+            $(".addCurrentCommandLeafFormReadOnly").show();
+            $(".addCurrentCommandLeafFormFunction").hide();
+        } else if ($("#addCurrentCommandLeafFormSelect option:selected").val() == "function") {
+            $(".addCurrentCommandLeafFormReadOnly").hide();
+            $(".addCurrentCommandLeafFormFunction").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#addCurrentCommandLeafBranchSelect").change(function() {
+
+        if ($("#addCurrentCommandLeafBranchSelect option:selected").val() == "leaf") {
+            $(".addCurrentCommandBranchForm").show();
+            $(".addCurrentCommandLeafForm").show();
+        } else if ($("#addCurrentCommandLeafBranchSelect option:selected").val() == "branch") {
+            $(".addCurrentCommandLeafForm").hide();
+            $(".addCurrentCommandBranchForm").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#addNextCommandBranchFormSelect").change(function() {
+
+        if ($("#addNextCommandBranchFormSelect option:selected").val() == "fixed") {
+            $(".addNextCommandBranchFormFixed").show();
+            $(".addNextCommandBranchFormConfigurable").hide();
+        } else if ($("#addNextCommandBranchFormSelect option:selected").val() == "configurable") {
+            $(".addNextCommandBranchFormFixed").hide();
+            $(".addNextCommandBranchFormConfigurable").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#addNextCommandLeafFormSelect").change(function() {
+
+        if ($("#addNextCommandLeafFormSelect option:selected").val() == "readonly") {
+            $(".addNextCommandLeafFormReadOnly").show();
+            $(".addNextCommandLeafFormFunction").hide();
+        } else if ($("#addNextCommandLeafFormSelect option:selected").val() == "function") {
+            $(".addNextCommandLeafFormReadOnly").hide();
+            $(".addNextCommandLeafFormFunction").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#addNextCommandLeafBranchSelect").change(function() {
+
+        if ($("#addNextCommandLeafBranchSelect option:selected").val() == "leaf") {
+            $(".addNextCommandBranchForm").show();
+            $(".addNextCommandLeafForm").show();
+        } else if ($("#addNextCommandLeafBranchSelect option:selected").val() == "branch") {
+            $(".addNextCommandLeafForm").hide();
+            $(".addNextCommandBranchForm").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#newTreeLeafBranchSelect").change(function() {
+
+        if ($("#newTreeLeafBranchSelect option:selected").val() == "leaf") {
+            $(".newTreeBranchForm").show();
+            $(".newTreeLeafForm").show();
+        } else if ($("#newTreeLeafBranchSelect option:selected").val() == "branch") {
+            $(".newTreeLeafForm").hide();
+            $(".newTreeBranchForm").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#newTreeBranchFormSelect").change(function() {
+
+        if ($("#newTreeBranchFormSelect option:selected").val() == "fixed") {
+            $(".newTreeBranchFormFixed").show();
+            $(".newTreeBranchFormConfigurable").hide();
+        } else if ($("#newTreeBranchFormSelect option:selected").val() == "configurable") {
+            $(".newTreeBranchFormFixed").hide();
+            $(".newTreeBranchFormConfigurable").show();
+        }
+    });
+
+    // Monitor the drop down lists and update on change
+    $("#newTreeLeafFormSelect").change(function() {
+
+        if ($("#newTreeLeafFormSelect option:selected").val() == "readonly") {
+            $(".newTreeLeafFormReadOnly").show();
+            $(".newTreeLeafFormFunction").hide();
+        } else if ($("#newTreeLeafFormSelect option:selected").val() == "function") {
+            $(".newTreeLeafFormReadOnly").hide();
+            $(".newTreeLeafFormFunction").show();
+        }
+    });
+
+
+    // New button clicked show blank tree and start again
+
+    $("#newTree").click(function() {
+
+        var cancelled = false;
+
+        // Before creating a new tree check if a tree exists and if the user wishes to save
+
+        $("#saveCurrentTreeModal").modal()
+
+        $("#saveButton").on("click", function(event) {
+
+            // create a blank array
+            var treeArray = [];
+            var usageArray = [];
+            var jsonTree = "";
+
+            if ($("#buildTree").children().length > 0) {
+                // Calls the exportTree function starting from ".treeConnectors" which will return all elements from the tree
+
+                jsonTree = JSON.stringify(exportTree(".treeConnectors", usageArray), null, 4);
+            }
+
+            var blob = new Blob([jsonTree], {
+                type: "application/json"
+            });
+            var url = URL.createObjectURL(blob);
+
+            $("#saveButton").attr("href", url)
+            $("#saveButton").attr("download", "commands.json")
+
+
+            $("#saveCurrentTreeModal").modal("hide");
+        });
+
+        $("#noSaveButton").on("click", function(event) {
+
+            $("#saveCurrentTreeModal").modal("hide");
+
+        });
+
+
+        $("#cancelButton").on("click", function(event) {
+
+            cancelled = true;
+
+            $("#saveCurrentTreeModal").modal("hide");
+
+        });
+
+
+
+        $("#saveCurrentTreeModal").on("hidden.bs.modal", function() {
+
+            if (!cancelled) {
+
+                // First reset just to be sure.
+                // Also wipe the existing tree
+                $("#newTreeLeafForm")[0].reset();
+                $("#newTreeBranchForm")[0].reset();
+
+                $("#buildTree").empty();
+
+                // Show the branch and the leaf forms
+                $(".newTreeBranchForm").show();
+
+                $(".newTreeLeafForm").show();
+
+                $(".newTreeConfigurationForms").show();
+
+                $("#newTreeModal").modal()
+
+                $("#newTreeModalApply").on("click", function(event) {
+
+
+                    var validationErrors = [];
+
+                    // Validate input
+                    $("#newTreeBranchForm input[type=text]").not(":hidden").each(function() {
+
+                        if ($(this).val() == "") {
+                            validationErrors.push([{
+                                'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                'issue': 'Input required'
+                            }]);
+                        }
+
+
+                        if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                            if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Single word only - No special characters'
+                                }]);
+                            }
+                        }
+
+                    });
+
+                    // Validate input
+                    $("#newTreeLeafForm input[type=text],textarea").not(":hidden").each(function() {
+
+                        if ($(this).val() == "") {
+                            validationErrors.push([{
+                                'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                'issue': 'Input required'
+                            }]);
+                        }
+
+                        if ($("label[for='" + $(this).attr('id') + "']").text() == "Command" || $("label[for='" + $(this).attr('id') + "']").text() == "Argument Name" || $("label[for='" + $(this).attr('id') + "']").text() == "Function Name") {
+                            if (!$(this).val().match(/^[a-zA-Z0-9$]*$/)) {
+                                validationErrors.push([{
+                                    'object': $("label[for='" + $(this).attr('id') + "']").text(),
+                                    'issue': 'Single word only - No special characters'
+                                }]);
+                            }
+                        }
+
+                    });
+
+
+
+
+                    if (validationErrors.length == 0) {
+
+
+                        // Since it's a blank tree then we need to start with the <ul>
+                        $("#buildTree").append(
+                            $("<div>").addClass("treeConnectors").append(
+                                $('<ul>').append()
+                            ));
+
+                        // If it's a leaf 
+                        if ($("#newTreeLeafBranchSelect option:selected").val() == "leaf") {
+                            // If it's fixed command then add the branch element and command name
+                            // Otherwise add the argument name
+                            if ($("#newTreeBranchFormSelect option:selected").val() == "fixed") {
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li elementtype="branch" class="parent_li" id="' + $("#newTreeBranchFormCommandFixed").val() + '">').append(
+                                        $('<span>').attr('style', 'font-size:22px; color:#26384D').append($("#newTreeBranchFormCommandFixed").val())
+                                    )
+                                );
+                            } else if ($("#newTreeBranchFormSelect option:selected").val() == "configurable") {
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li elementtype="branch" class="parent_li" id="$$">').append(
+                                        $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                    )
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li hidden class="parent_li" id="argumentName">').append($("#newTreeBranchFormArgument").val())
+                                );
+                            }
+
+                            // Next add the command detail
+                            // If it's just returning some data then add the name and detail
+                            // Otherwise add the function name
+                            if ($("#newTreeLeafFormSelect option:selected").val() == "readonly") {
+
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").append(
+                                    $("<ul>").append()
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").children("ul").append(
+                                    $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("readonly")
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").children("ul").append(
+                                    $('<li hidden elementtype="leaf" class="parent_li" id="detail">').append($("#newTreeLeafFormCommandDetail").val())
+                                );
+
+                            } else if ($("#newTreeLeafFormSelect option:selected").val() == "function") {
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").append(
+                                    $('<ul>').append()
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").children("ul").append(
+                                    $('<li hidden elementtype="leaf" class="parent_li" id="commandType">').append("function")
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").children("li:first-child").children("ul").append(
+                                    $('<li hidden elementtype="leaf" class="parent_li" id="function">').append($("#newTreeLeafFormFunctionName").val())
+                                );
+
+                            }
+
+                        } else if ($("#newTreeLeafBranchSelect option:selected").val() == "branch") {
+
+                            // It's  a branch so only show the branch form and use the values provided in the text boxes
+                            if ($("#newTreeBranchFormSelect option:selected").val() == "fixed") {
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li elementtype="branch" class="parent_li" id="' + $("#newTreeBranchFormCommandFixed").val() + '">').append(
+                                        $('<span>').attr('style', 'font-size:22px; color:#26384D').append($("#newTreeBranchFormCommandFixed").val())
+                                    )
+                                );
+
+                            } else if ($("#newTreeBranchFormSelect option:selected").val() == "configurable") {
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li elementtype="branch" class="parent_li" id="$$">').append(
+                                        $('<span>').attr('style', 'font-size:22px; color:#26384D').append("$$")
+                                    )
+                                );
+
+                                $("#buildTree").children(".treeConnectors").children("ul").append(
+                                    $('<li hidden class="parent_li" id="argumentName">').append($("#newTreeBranchFormArgument").val())
+                                );
+
+                            }
+
+                        }
+
+                        event.stopImmediatePropagation();
+
+                        $("#newTreeModal").modal("hide");
+
+                    } else {
+
+                        // If the configuration is not valid then show an alert bubble
+
+                        errorOutput = "<b><big>Validation Results:</big></b>";
+
+
+                        for (i = 0; i < validationErrors.length; i++) {
+                            errorOutput += "<BR>";
+                            errorOutput += "<BR><b> Field: </b>" + validationErrors[i][0].object;
+                            errorOutput += "<BR><b> Problem: </b> " + validationErrors[i][0].issue;
+                        }
+
+                        showAlert(errorOutput);
+
+                    }
+
+
+                });
+
+            }
+        })
+
+    });
+
+
+    $("#exportTreeButton").click(function() {
+
+
+        // Create a blank array
+        var treeArray = [];
+        var usageArray = [];
+
+        var jsonTree = "";
+
+        // Dxports the tree to a specified file as JSON format
+        if ($("#buildTree").children().length > 0) {
+            jsonTree = JSON.stringify(exportTree(".treeConnectors", usageArray), null, 4);
+        }
+
+        var blob = new Blob([jsonTree], {
+            type: "application/json"
+        });
+        var url = URL.createObjectURL(blob);
+
+        $("#exportTreeButton").attr("href", url)
+        $("#exportTreeButton").attr("download", "commands.json")
+
+    });
+
+    
+    $("#addFullCommandButton").click(function() {
+
+        // First reset just to be sure.
+        // Also wipe the existing tree
+        $("#fullCommandForm")[0].reset();
+        $("#fullCommandBranchForm")[0].reset();
+
+        // Show the branch and the leaf forms
+        $(".fullCommandBranchForm").show();
+        $(".fullCommandForm").show();
+
+        $(".fullCommandFormReadOnly").show();
+        $(".fullCommandFormFunction").hide();
+
+        $(".fullCommandConfigurationForms").show();
+
+        $("#fullCommandModal").modal()
+
+        $("#fullCommandModalApply").on("click", function(event) {
+
+            if ($("#buildTree").children().length > 0) {
+                addFullCommand(".treeConnectors > ul", parse($("#fullCommandInput").val(), true), 0)
+
+            } else {
+
+                $("#buildTree").append(
+                    $("<div>").addClass("treeConnectors").append(
+                        $("<ul>").append()
+                    ));
+
+                addFullCommand(".treeConnectors > ul", parse($("#fullCommandInput").val(), true), 0)
+
+            }
+
+            event.stopImmediatePropagation();
+
+            $("#fullCommandModal").modal("hide");
+
+        });
+
+
+    });
+
+    // This is called when the small info icon is selected. This will highlight the new, import, and export buttons as well as the bot name field
+    // Using trip.js
+    // http://eragonj.github.io/Trip.js/
+    $("#newImportExportInfo").click(function() {
+
+        var tripToHighlight = new Trip([{
+            sel: $("#newImportExportButtonGroup"),
+            content: "Create a new tree, import an existing tree, or export the current tree. \n\n",
+            expose: true
+        }, {
+            sel: $("#botNameInput"),
+            content: "This is the first argument you will use to call your bot. e.g. /bot check weather  \n\n",
+            expose: true
+        }], {
+
+            showNavigation: true,
+            showCloseBox: true,
+            delay: 10000
+
+        })
+
+        tripToHighlight.start();
+
+
+
+
+    });
+
+    // This is called when the small info icon is selected. This will highlight the tree on the left handside
+    // Using trip.js
+    // http://eragonj.github.io/Trip.js/
+    $("#treeInfo").click(function() {
+
+
+
+        if ($("#buildTree").children().length > 0) {
+
+            var tripToHighlight = new Trip([{
+                sel: $(".treeConnectors ul li span").first(),
+                content: "Right click on a command to edit its properties  \n\n",
+                expose: true
+            }], {
+
+                showNavigation: true,
+                showCloseBox: true,
+                delay: 5000,
+                onTripEnd: function() {
+
+                    var position = $("#buildTree ul li span").first().offset();
+
+                    $("#buildTree ul li span").first().trigger(
+                        $.Event("contextmenu", {
+                            pageX: position.left + 10,
+                            pageY: position.top + 10
+                        })
+                    );
+
+                }
+            });
+
+            tripToHighlight.start();
+        } else {
+            var tripToHighlight = new Trip([{
+                sel: $("#newTree"),
+                content: "Start by creating a new tree or importing an existing tree. \n\n",
+                expose: true
+            }], {
+
+                showNavigation: true,
+                showCloseBox: true,
+                delay: 5000
+
+            });
+
+            tripToHighlight.start();
+
+        }
+
+    });
+
+
+    // Reset modal form after hidden to erase any input data
+
+    $(".modal").on("hidden.bs.modal", function() {
+        if ($(this).children("form").length) {
+            $(this).find("form")[0].reset();
+        }
+    });
+
+});
+
+</script>
+
+
+
+</html>

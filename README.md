@@ -4,6 +4,19 @@ Allows you to quickly and easily build, modify, and export a command tree that c
 
 ![alt tag](https://github.com/conmurphy/commandbuilder/blob/master/images/gui.png?raw=true)
 
+Table of Contents
+=================
+
+   * [Extensible Spark Bot - Command Builder](#extensible-spark-bot---command-builder)
+      * [Installation](#installation)
+         * [Deployment Options](#deployment-options)
+         * [Standard](#standard)
+         * [Vagrant - VirtualBox](#vagrant---virtualbox)
+         * [Vagrant - AWS](#vagrant---aws)
+      * [Files](#files)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 ## Installation
 
 ### Deployment Options

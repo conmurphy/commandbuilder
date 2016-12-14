@@ -1,6 +1,8 @@
 # Extensible Spark Bot - Command Builder
 
-#### Allows you to quickly and easily build, modify, and export a command tree that can be used with the Extensible Spark Bot
+Allows you to quickly and easily build, modify, and export a command tree that can be used with the Extensible Spark Bot
+
+![alt tag](https://github.com/conmurphy/commandbuilder/blob/master/images/commandbuilder.png?raw=true)
 
 ## Installation
 

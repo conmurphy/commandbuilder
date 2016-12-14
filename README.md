@@ -2,7 +2,7 @@
 
 Allows you to quickly and easily build, modify, and export a command tree that can be used with the Extensible Spark Bot
 
-![alt tag](https://github.com/conmurphy/commandbuilder/blob/master/images/commandbuilder.png?raw=true)
+![alt tag](https://github.com/conmurphy/commandbuilder/blob/master/images/gui.png?raw=true)
 
 ## Installation
 

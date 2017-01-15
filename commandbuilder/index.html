@@ -37,48 +37,45 @@
                                     Command Tree
                                     <i id="treeInfo" class="fa fa-info-circle fa-1x" aria-hidden="true" style="float: right;vertical-align:middle;"></i>
                                 </div>
-                                <div class="panel-body " >
+                                <div class="panel-body" >
                                     <div id="buildTree">
                                         <div class="treeConnectors">
                                             <ul>
-                                                <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
-                                                <li hidden="" elementtype="leaf" class="parent_li" id="detail">sd</li>
-                                                <li elementtype="branch" class="parent_li" id="this">
-                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">this</span>
+                                                <li elementtype="branch" class="parent_li" id="hello">
+                                                    <span style="font-size:22px; color:#26384D">hello</span>
+                                                    <ul>
+                                                        <li elementtype="leaf" id="commandType" hidden="">readonly</li>
+                                                        <li elementtype="leaf" id="detail" hidden="">hi</li>
+                                                    </ul>
+                                                </li>
+                                                <li elementtype="branch" class="parent_li" id="what">
+                                                    <span style="font-size:22px; color:#26384D">what</span>
                                                     <ul>
                                                         <li elementtype="branch" class="parent_li" id="is">
                                                             <span style="font-size:22px; color:#26384D">is</span>
                                                             <ul>
-                                                                <li elementtype="branch" class="parent_li" id="a">
-                                                                    <span style="font-size:22px; color:#26384D">a</span>
+                                                                <li elementtype="branch" class="parent_li" id="your">
+                                                                    <span style="font-size:22px; color:#26384D">your</span>
                                                                     <ul>
-                                                                        <li elementtype="branch" class="parent_li" id="sample">
-                                                                            <span style="font-size:22px; color:#26384D">sample</span>
+                                                                        <li elementtype="branch" class="parent_li" id="name">
+                                                                            <span style="font-size:22px; color:#26384D">name</span>
                                                                             <ul>
-                                                                                <li elementtype="branch" class="parent_li" id="command">
-                                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">command</span>
-                                                                                    <ul>
-                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
-                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="detail">This text will be sent to the chat room when this command has been typed</li>
-                                                                                    </ul>
-                                                                                </li>
+                                                                                <li elementtype="leaf" id="commandType" hidden="">readonly</li>
+                                                                                <li elementtype="leaf" id="detail" hidden="">My name is Weather Bot</li>
                                                                             </ul>
                                                                         </li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li elementtype="branch" class="parent_li" id="another">
-                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">another</span>
-                                                                    <ul>
-                                                                        <li elementtype="branch" class="parent_li" id="sample">
-                                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">sample</span>
+                                                                        <li elementtype="branch" class="parent_li" id="age">
+                                                                            <span style="font-size:22px; color:#26384D">age</span>
                                                                             <ul>
-                                                                                <li elementtype="branch" class="parent_li" id="command">
-                                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">command</span>
-                                                                                    <ul>
-                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
-                                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="detail">this is some more sample text</li>
-                                                                                    </ul>
-                                                                                </li>
+                                                                                <li elementtype="leaf" id="commandType" hidden="">readonly</li>
+                                                                                <li elementtype="leaf" id="detail" hidden="">100</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li elementtype="branch" class="parent_li" id="purpose">
+                                                                            <span style="font-size:22px; color:#26384D">purpose</span>
+                                                                            <ul>
+                                                                                <li elementtype="leaf" id="commandType" hidden="">readonly</li>
+                                                                                <li elementtype="leaf" id="detail" hidden="">My purpose is to assist you with finding the weather</li>
                                                                             </ul>
                                                                         </li>
                                                                     </ul>
@@ -88,31 +85,19 @@
                                                     </ul>
                                                 </li>
                                                 <li elementtype="branch" class="parent_li" id="check">
-                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">check</span>
+                                                    <span style="font-size:22px; color:#26384D">check</span>
                                                     <ul>
                                                         <li elementtype="branch" class="parent_li" id="weather">
-                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">weather</span>
+                                                            <span style="font-size:22px; color:#26384D">weather</span>
                                                             <ul>
                                                                 <li elementtype="branch" class="parent_li" id="$$">
-                                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">$$</span>
+                                                                    <span style="font-size:22px; color:#26384D">$$</span>
                                                                     <ul>
-                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="commandType">function</li>
-                                                                        <li hidden="" elementtype="leaf" class="parent_li" id="function">checkWeather</li>
+                                                                        <li elementtype="leaf" id="commandType" hidden="">function</li>
+                                                                        <li elementtype="leaf" id="function" hidden="">checkWeather</li>
                                                                     </ul>
                                                                 </li>
-                                                                <li hidden="" elementtype="leaf" id="argumentName">location</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li elementtype="branch" class="parent_li" id="hello">
-                                                    <span style="font-size: 22px; color: rgb(38, 56, 77);">hello</span>
-                                                    <ul>
-                                                        <li elementtype="branch" class="parent_li" id="world">
-                                                            <span style="font-size: 22px; color: rgb(38, 56, 77);">world</span>
-                                                            <ul>
-                                                                <li hidden="" elementtype="leaf" class="parent_li" id="commandType">readonly</li>
-                                                                <li hidden="" elementtype="leaf" class="parent_li" id="detail">hi there</li>
+                                                                <li elementtype="leaf" id="argumentName" hidden="">city</li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -1598,15 +1583,17 @@ function addFullCommand(commandPosition, args, argPos) {
 
 function exportTree(currentPos, usageArray) {
 
+   
     var treeArray = [];
     var usageString = "";
     var availableSubcommands = "";
+    var temp = {};
+    var argumentName = {};
 
     // If we find an unordered list then for each list item validate properties
 
     if ($(currentPos).children("ul").length) {
-        var temp = {};
-        var argumentName = {};
+        
 
         // If it finds $$ then we're looking for user input in which case we also need to return the argumentName (i.e. this is the key, the value is what the user inputs in the chat window)
 
@@ -2441,6 +2428,8 @@ $(document).ready(function() {
         $("#fullCommandModal").modal()
 
         $("#fullCommandModalApply").on("click", function(event) {
+
+            
 
             if ($("#buildTree").children().length > 0) {
                 addFullCommand(".treeConnectors > ul", parse($("#fullCommandInput").val(), true), 0)
